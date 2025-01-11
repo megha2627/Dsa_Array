@@ -1,0 +1,60 @@
+Question: Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.
+
+
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        int m = matrix.length; // Get the number of rows
+       int n = matrix[0].length;
+       int[][] matrix1 = new int[m][n];
+       for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            matrix1[i][j]=matrix[i][j];
+            
+        }
+       }
+       
+        
+       
+
+        for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+
+            if(matrix[i][j]==0){
+                 int a=i;
+                int b=j;
+               
+                
+                for(int k=0;k<n;k++){
+                    matrix1[a][k]=0;
+                   
+                }
+                for(int l=0;l<m;l++){
+                    matrix1[l][b]=0;
+                }
+                 a=0;
+            b=0;
+           
+                
+            }
+           
+            
+        
+            
+            
+            
+        }
+       }
+         for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            matrix[i][j]=matrix1[i][j];
+            
+        }
+       }
+       System.out.println(matrix);
+    }
+    public static void main(String args[]){
+      
+    // Now 'modifiedMatrix' holds the copied version with zeros
+    
+    }
+}

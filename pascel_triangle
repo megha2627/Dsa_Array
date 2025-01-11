@@ -1,0 +1,65 @@
+Question:Given an integer numRows, return the first numRows of Pascal's triangle.
+In Pascal's triangle, each number is the sum of the two numbers directly above it as s
+
+
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+     
+     
+       // List<List<Integer>> triangle = new Solution().generate(numRows);
+      List<List<Integer>> s1=new ArrayList<>();
+    
+
+    int k=numRows;
+
+    for(int i=0;i<k;i++){
+    List<Integer> si=new ArrayList<>();
+   int x=i;
+    for(int j=0;j<=x;j++){
+    if(i==0 || i==1){
+    si.add(1);
+  }
+    else{
+    if((j==0)){
+   int u=s1.get(i-1).get(j);
+    si.add(u);
+    }
+      
+      
+    else{
+      int q=0;
+   int z=s1.get(i-1).size()-1;
+      if(j<=z){
+        q=s1.get(i-1).get(j)+s1.get(i-1).get(j-1);
+        
+      }
+      else{
+        q=s1.get(i-1).get(j-1);
+      }
+    
+     
+       
+        
+      
+      
+   
+      // q=s1.get(i-1).get(1)+q;
+     
+       si.add(q);
+      
+
+  }
+    }
+    }
+      s1.add(si);
+    }
+    return s1;
+
+  
+
+
+        
+       
+        
+    }
+}
